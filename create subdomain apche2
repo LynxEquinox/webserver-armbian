@@ -13,3 +13,7 @@ masukan script ini di paling bawah (bawah virtual host)
 
     # Other directives here
 </VirtualHost>
+
+
+setelah itu lakukan restart 
+/etc/init.d/apache2 restart
