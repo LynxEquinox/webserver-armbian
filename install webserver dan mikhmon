@@ -1,0 +1,19 @@
+1. Install web server Apache:
+   sudo apt update
+   sudo apt-get -y install apache2
+ 
+2. Install PHP 7.1 dan Apache PHP Modul
+   sudo apt-get -y install php7.4 libapache2-mod-php7.4
+   sudo service apache2 restart
+ 
+   Cek apakah php dan apache sudah terhubung dengan dengan cara berikut:
+   nano /var/www/html/info.php
+   copykan script berikut:
+   <?php
+   phpinfo();
+ 
+3. Upload Mikhmon di webserver:
+   copy isi folder mikhmon ke folder "/var/www/html" 
+   dengan menggunakan aplikasi WinSCP.
+   chmod -R 755 /var/www/html
+   chown -R www-data:www-data /var/www/html
