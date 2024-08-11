@@ -1,0 +1,15 @@
+cd /etc/apache2/sites-available
+nano 000-default.conf
+
+masukan script ini di paling bawah (bawah virtual host)
+
+<VirtualHost *:80>
+    DocumentRoot /var/www/mikhmon
+    ServerAdmin webmaster@imbo.my.id
+    ServerName mikhmon.imbo.my.id
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+    # Other directives here
+</VirtualHost>
