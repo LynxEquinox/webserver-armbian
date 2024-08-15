@@ -1,0 +1,31 @@
+sudo apt install nginx -y
+sudo systemctl status nginx
+sudo systemctl is-enabled nginx
+sudo apt install mysql-server -y
+untuk mengkonfigurasi mysql ketikan sudo mysql_secure_installation
+
+sudo install php php-mysql php-fpm -y
+sudo systemctl status php7.4-fpm
+sudo systemctl is-enabled php7.4-fpm
+
+edit file nginx
+sudo nano /etc/nginx/sites-available/default
+==============================================================
+index index.php index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+                fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        }
+==============================================================
+cek syntax apakah berjalan
+sudo nginx -t
+sudo systemctl restart nginx
